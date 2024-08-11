@@ -59,15 +59,17 @@ submit.onclick = function(){
                 dataPro.push(newPro);
             }
         }
+        else{
+            dataPro[tmp]=newPro;
+            mood='create';
+            console.log(dataPro[tmp]);
+            submit.innerHTML='Create';
+            count.style.display='block';
+        
+        }
     }
     
-   else{
-    dataPro[tmp]=newPro;
-    mood='create';
-    submit.innerHTML='Create';
-    count.style.display='block';
 
-   }
     localStorage.setItem("product", JSON.stringify(dataPro));
     clearData();
     showData();
